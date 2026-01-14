@@ -3,7 +3,8 @@ class Solution {
         int[] r = new int[k]; 
         HashMap<Integer,Integer> map = new HashMap<>();
 
-
+        if(nums.length == 1)
+        return nums;
 
         for(int i=0;i<nums.length;i++){
             if(map.containsKey(nums[i])){
