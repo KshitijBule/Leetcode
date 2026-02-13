@@ -4,7 +4,7 @@ class Solution {
         int first = Integer.MAX_VALUE;
         int second = Integer.MAX_VALUE;
 
-        // find two smallest after index 0
+        
         for(int i = 1; i < nums.length; i++){
 
             if(nums[i] < first){
