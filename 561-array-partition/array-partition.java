@@ -1,16 +1,12 @@
 class Solution {
     public int arrayPairSum(int[] nums) {
         Arrays.sort(nums);
-        int n = nums.length;
-        int minSum = 0;
-        int i=0;
-        int j=1;
+        int sum = 0;
 
-        while(j<=n-1){
-            minSum += Math.min(nums[i],nums[j]);
-            i+=2;
-            j+=2;
+        for (int i = 0; i < nums.length; i += 2) {
+            sum += nums[i];
         }
-        return minSum;
+
+        return sum;
     }
 }
