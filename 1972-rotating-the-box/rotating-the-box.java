@@ -5,7 +5,7 @@ class Solution {
         int m = box.length;
         int n = box[0].length;
 
-        // Step 1: Apply gravity
+       
         for (int i = 0; i < m; i++) {
 
             int empty = n - 1;
@@ -25,7 +25,7 @@ class Solution {
             }
         }
 
-        // Step 2: Rotate matrix clockwise
+        
         char[][] ans = new char[n][m];
 
         for (int i = 0; i < m; i++) {
