@@ -1,25 +1,21 @@
 class Solution {
+    public int f(int ind,int[] arr,int[] dp){
+        if(ind==0) return arr[ind];
+        if(ind<0) return 0;
+        if(dp[ind]!=-1) return dp[ind];
+
+       int pick = arr[ind] + f(ind-2,arr,dp);
+       int not = 0 + f(ind-1,arr,dp);
+
+        return dp[ind] = Math.max(pick,not);
+    }
     public int rob(int[] nums) {
         int n = nums.length;
+        int dp[] = new int[n];
+        Arrays.fill(dp, -1);
 
-        if (n == 1)
-            return nums[0];
+        return f(n-1,nums,dp);
 
-        int[] dp = new int[n];
 
-        dp[0] = nums[0];
-
-        for (int i = 1; i < n; i++) {
-
-            int pick = nums[i];
-            if (i > 1)
-                pick += dp[i - 2];
-
-            int notPick = dp[i - 1];
-
-            dp[i] = Math.max(pick, notPick);
-        }
-
-        return dp[n - 1];
     }
 }
